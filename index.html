@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MBA – Master of Business Ads | Digital Marketing India</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Barlow+Condensed:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --white: #f5f2ec;
+    --gold: #c9a84c;
+    --gold-light: #e8c96b;
+    --red: #c0392b;
+    --gray: #1a1a1a;
+    --gray-mid: #2e2e2e;
+    --text-muted: #888;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* Custom Cursor */
+  .cursor {
+    width: 10px; height: 10px;
+    background: var(--gold);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s ease;
+    mix-blend-mode: difference;
+  }
+  .cursor-ring {
+    width: 36px; height: 36px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.35s ease, width 0.3s ease, height 0.3s ease;
+    opacity: 0.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.6rem 3rem;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    transition: padding 0.3s ease;
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--white); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold);
+    color: var(--black) !important;
+    padding: 0.5rem 1.4rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.15em !important;
+    transition: background 0.3s !important;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--black) !important; }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 8rem 3rem 5rem 3rem;
+    position: relative; z-index: 2;
+  }
+  .hero-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 40px; height: 1px;
+    background: var(--gold);
+  }
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 7vw, 7.5rem);
+    line-height: 0.9;
+    letter-spacing: 0.03em;
+    margin-bottom: 1.8rem;
+  }
+  .hero-title .line-gold { color: var(--gold); }
+  .hero-title .line-outline {
+    -webkit-text-stroke: 1.5px var(--white);
+    color: transparent;
+  }
+  .hero-sub {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #aaa;
+    max-width: 380px;
+    margin-bottom: 2.8rem;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--black);
+    padding: 1rem 2.2rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: none;
+    transition: background 0.3s, transform 0.2s;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    padding: 1rem 2.2rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.25);
+    cursor: none;
+    transition: border-color 0.3s, color 0.3s;
+  }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridShift 20s linear infinite;
+  }
+  @keyframes gridShift {
+    from { background-position: 0 0; }
+    to { background-position: 60px 60px; }
+  }
+  .hero-visual {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-circle {
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.2);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    animation: rotateSlow 30s linear infinite;
+  }
+  .hero-circle::before {
+    content: '';
+    position: absolute; inset: 20px;
+    border-radius: 50%;
+    border: 1px dashed rgba(201,168,76,0.15);
+  }
+  .hero-circle::after {
+    content: '';
+    position: absolute; inset: 50px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+  }
+  @keyframes rotateSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  .hero-inner-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    color: var(--gold);
+    opacity: 0.15;
+    animation: rotateSlow 30s linear infinite reverse;
+    letter-spacing: 0.1em;
+  }
+  .hero-stats {
+    position: absolute; bottom: 3rem; left: 0; right: 0;
+    display: flex; justify-content: center; gap: 4rem;
+    z-index: 2;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 0.3rem;
+  }
+  .hero-line {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  /* MARQUEE */
+  .marquee-wrap {
+    overflow: hidden;
+    background: var(--gold);
+    padding: 0.8rem 0;
+  }
+  .marquee-track {
+    display: flex;
+    gap: 3rem;
+    animation: marquee 20s linear infinite;
+    white-space: nowrap;
+  }
+  .marquee-track span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--black);
+    flex-shrink: 0;
+  }
+  .marquee-track span.dot { color: var(--black); opacity: 0.4; }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* SECTION COMMON */
+  section { padding: 7rem 3rem; }
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 1.2rem;
+  }
+  .section-label::before {
+    content: '';
+    width: 30px; height: 1px;
+    background: var(--gold);
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: 0.05em;
+  }
+  .section-title .outline {
+    -webkit-text-stroke: 1.5px rgba(255,255,255,0.4);
+    color: transparent;
+  }
+
+  /* ABOUT */
+  #about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    background: var(--gray);
+  }
+  .about-content p {
+    color: #aaa;
+    line-height: 1.85;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+  }
+  .about-visual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(201,168,76,0.15);
+  }
+  .about-card {
+    background: var(--black);
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+  .about-card:hover { background: rgba(201,168,76,0.05); }
+  .about-card-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: var(--gold);
+    opacity: 0.6;
+    line-height: 1;
+  }
+  .about-card-text {
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-top: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* SERVICES */
+  #services {
+    background: var(--black);
+  }
+  .services-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 4rem;
+    flex-wrap: wrap; gap: 2rem;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(201,168,76,0.1);
+  }
+  .service-card {
+    background: var(--black);
+    padding: 3rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.4s;
+    border-top: 3px solid transparent;
+    cursor: none;
+  }
+  .service-card:hover {
+    background: rgba(201,168,76,0.04);
+    border-top-color: var(--gold);
+  }
+  .service-card:hover .service-arrow { opacity: 1; transform: translateX(0); }
+  .service-icon {
+    width: 52px; height: 52px;
+    border: 1px solid rgba(201,168,76,0.3);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.8rem;
+    font-size: 1.4rem;
+  }
+  .service-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    opacity: 0.5;
+    margin-bottom: 1rem;
+  }
+  .service-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.7rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+  }
+  .service-desc {
+    font-size: 0.85rem;
+    color: #888;
+    line-height: 1.7;
+  }
+  .service-tags {
+    display: flex; flex-wrap: wrap; gap: 0.4rem;
+    margin-top: 1.5rem;
+  }
+  .service-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid rgba(201,168,76,0.2);
+    color: var(--gold);
+    opacity: 0.7;
+  }
+  .service-arrow {
+    position: absolute; bottom: 2rem; right: 2rem;
+    font-size: 1.5rem;
+    color: var(--gold);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  /* PROCESS */
+  #process {
+    background: var(--gray);
+  }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 4rem;
+    position: relative;
+  }
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 2.5rem; left: 12%; right: 12%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .process-step { padding: 0 2rem; text-align: center; position: relative; }
+  .step-dot {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.5rem;
+    background: var(--gray);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    color: var(--gold);
+    position: relative; z-index: 2;
+  }
+  .step-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.8rem;
+  }
+  .step-desc { font-size: 0.8rem; color: #888; line-height: 1.65; }
+
+  /* CONTACT */
+  #contact {
+    background: var(--black);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .contact-info p {
+    color: #888;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin-top: 1.5rem;
+  }
+  .contact-details { margin-top: 2.5rem; }
+  .contact-item {
+    display: flex; align-items: flex-start; gap: 1.2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .contact-item:last-child { border-bottom: none; }
+  .contact-icon {
+    width: 40px; height: 40px; flex-shrink: 0;
+    border: 1px solid rgba(201,168,76,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    color: var(--gold);
+    margin-top: 0.1rem;
+  }
+  .contact-item-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+  .contact-item-val { font-size: 0.9rem; color: #ccc; }
+  .contact-form { margin-top: 2rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .form-group { display: flex; flex-direction: column; }
+  .form-group label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--white);
+    padding: 0.85rem 1rem;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s;
+    cursor: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--gold); }
+  .form-group select option { background: var(--gray); }
+  .form-group textarea { resize: none; height: 110px; }
+  .form-full { margin-bottom: 1rem; }
+  .form-submit {
+    display: inline-flex; align-items: center; gap: 0.8rem;
+    background: var(--gold);
+    color: var(--black);
+    padding: 1rem 2.5rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: none;
+    cursor: none;
+    transition: background 0.3s;
+    margin-top: 0.8rem;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  }
+  .form-submit:hover { background: var(--gold-light); }
+
+  /* FOOTER */
+  footer {
+    background: var(--gray);
+    border-top: 1px solid rgba(201,168,76,0.15);
+    padding: 2rem 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+  }
+  .footer-copy {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+
+  /* SCROLL REVEAL */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    #hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    #about { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .process-steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .process-steps::before { display: none; }
+    #contact { grid-template-columns: 1fr; }
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+  }
+  @media (max-width: 560px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    section { padding: 4rem 1.5rem; }
+    .hero-left { padding: 7rem 1.5rem 4rem; }
+    footer { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">MBA<span> — MASTER OF BUSINESS ADS</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact" class="nav-cta">Get Started</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">India's Premier Digital Marketing Agency</div>
+    <h1 class="hero-title">
+      <span class="line-gold">MASTER</span><br>
+      <span class="line-outline">YOUR</span><br>
+      <span>ADS.</span>
+    </h1>
+    <p class="hero-sub">We build brands, run high-converting ad campaigns, and engineer digital experiences that deliver measurable ROI — from Mumbai to all of India.</p>
+    <div class="hero-btns">
+      <a href="#services" class="btn-primary">Explore Services</a>
+      <a href="#contact" class="btn-secondary">Talk to Us</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-visual">
+      <div class="hero-circle">
+        <div class="hero-inner-text">MBA</div>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">200+</div>
+        <div class="stat-label">Campaigns Run</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5X</div>
+        <div class="stat-label">Avg. ROAS</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+    </div>
+    <div class="hero-line"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Google Ads</span><span class="dot">✦</span>
+    <span>Facebook Ads</span><span class="dot">✦</span>
+    <span>WhatsApp Marketing</span><span class="dot">✦</span>
+    <span>Website Design</span><span class="dot">✦</span>
+    <span>Software Development</span><span class="dot">✦</span>
+    <span>Performance Marketing</span><span class="dot">✦</span>
+    <span>Lead Generation</span><span class="dot">✦</span>
+    <span>Brand Strategy</span><span class="dot">✦</span>
+    <!-- repeat for seamless loop -->
+    <span>Google Ads</span><span class="dot">✦</span>
+    <span>Facebook Ads</span><span class="dot">✦</span>
+    <span>WhatsApp Marketing</span><span class="dot">✦</span>
+    <span>Website Design</span><span class="dot">✦</span>
+    <span>Software Development</span><span class="dot">✦</span>
+    <span>Performance Marketing</span><span class="dot">✦</span>
+    <span>Lead Generation</span><span class="dot">✦</span>
+    <span>Brand Strategy</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-content reveal">
+    <div class="section-label">About MBA</div>
+    <h2 class="section-title">WE DON'T JUST RUN ADS.<br><span class="outline">WE ENGINEER GROWTH.</span></h2>
+    <p>MBA – Master of Business Ads is a full-service digital marketing agency based in Bandra East, Mumbai. We combine creative strategy with data-driven precision to help Indian businesses win online — whether it's getting more leads, more sales, or more visibility.</p>
+    <p>Our team of certified ad specialists, designers, and developers brings enterprise-grade expertise to businesses of every size. From local startups to national brands — we make every rupee of your ad spend work harder.</p>
+  </div>
+  <div class="about-visual reveal">
+    <div class="about-card">
+      <div class="about-card-num">01</div>
+      <div class="about-card-text">Strategy-first approach to every campaign</div>
+    </div>
+    <div class="about-card">
+      <div class="about-card-num">02</div>
+      <div class="about-card-text">Certified Google & Meta ad partners</div>
+    </div>
+    <div class="about-card">
+      <div class="about-card-num">03</div>
+      <div class="about-card-text">Full-stack web & software solutions</div>
+    </div>
+    <div class="about-card">
+      <div class="about-card-num">04</div>
+      <div class="about-card-text">Transparent reporting, real results</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header reveal">
+    <div>
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">OUR <span class="outline">SERVICES</span></h2>
+    </div>
+    <a href="#contact" class="btn-secondary">Start a Project →</a>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">🌐</div>
+      <div class="service-num">01 / 05</div>
+      <div class="service-name">Website Design</div>
+      <p class="service-desc">From landing pages to full corporate websites — we design and develop sites that convert visitors into customers. Built fast, mobile-first, and built to rank.</p>
+      <div class="service-tags">
+        <span class="service-tag">UI/UX</span>
+        <span class="service-tag">Responsive</span>
+        <span class="service-tag">SEO Ready</span>
+      </div>
+      <div class="service-arrow">→</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🔍</div>
+      <div class="service-num">02 / 05</div>
+      <div class="service-name">Google Ads</div>
+      <p class="service-desc">Search, Display, Shopping & YouTube campaigns managed by certified specialists. We optimize for maximum clicks at minimum cost-per-lead.</p>
+      <div class="service-tags">
+        <span class="service-tag">Search Ads</span>
+        <span class="service-tag">PPC</span>
+        <span class="service-tag">Remarketing</span>
+      </div>
+      <div class="service-arrow">→</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">📘</div>
+      <div class="service-num">03 / 05</div>
+      <div class="service-name">Facebook Ads</div>
+      <p class="service-desc">Meta advertising across Facebook & Instagram — from awareness to conversion. We create thumb-stopping creatives backed by razor-sharp audience targeting.</p>
+      <div class="service-tags">
+        <span class="service-tag">Instagram</span>
+        <span class="service-tag">Lead Gen</span>
+        <span class="service-tag">Retargeting</span>
+      </div>
+      <div class="service-arrow">→</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">💬</div>
+      <div class="service-num">04 / 05</div>
+      <div class="service-name">WhatsApp Ads</div>
+      <p class="service-desc">Leverage India's most-used app. We set up WhatsApp Business campaigns that generate direct conversations and faster conversions from your ideal customers.</p>
+      <div class="service-tags">
+        <span class="service-tag">WhatsApp API</span>
+        <span class="service-tag">Broadcast</span>
+        <span class="service-tag">Click-to-Chat</span>
+      </div>
+      <div class="service-arrow">→</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">⚙️</div>
+      <div class="service-num">05 / 05</div>
+      <div class="service-name">Software Development</div>
+      <p class="service-desc">Custom CRMs, web apps, and automation tools built to streamline your operations. We turn complex business problems into elegant digital solutions.</p>
+      <div class="service-tags">
+        <span class="service-tag">Web Apps</span>
+        <span class="service-tag">CRM</span>
+        <span class="service-tag">Automation</span>
+      </div>
+      <div class="service-arrow">→</div>
+    </div>
+    <div class="service-card reveal" style="background: rgba(201,168,76,0.04); border-top: 3px solid var(--gold);">
+      <div style="height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 1rem;">
+        <div class="section-label" style="margin-bottom: 1rem;">Ready to grow?</div>
+        <p style="color: #888; font-size: 0.85rem; margin-bottom: 1.5rem; line-height: 1.7;">Let's talk about your business goals and build a custom digital strategy that delivers.</p>
+        <a href="#contact" class="btn-primary" style="width: fit-content;">Book Free Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="reveal" style="text-align:center; max-width: 600px; margin: 0 auto 1rem;">
+    <div class="section-label" style="justify-content: center;">How We Work</div>
+    <h2 class="section-title">THE MBA <span class="outline">PROCESS</span></h2>
+  </div>
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="step-dot">01</div>
+      <div class="step-title">Discovery</div>
+      <p class="step-desc">We deep-dive into your business, goals, competitors, and target audience to build a solid foundation.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-dot">02</div>
+      <div class="step-title">Strategy</div>
+      <p class="step-desc">A custom digital roadmap is created — channel selection, budget allocation, and KPIs are clearly defined.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-dot">03</div>
+      <div class="step-title">Execute</div>
+      <p class="step-desc">Campaigns go live. Creative assets are designed, copy is crafted, and ads are meticulously launched.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-dot">04</div>
+      <div class="step-title">Optimize</div>
+      <p class="step-desc">Continuous monitoring, A/B testing, and weekly reporting ensure performance keeps improving.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-info reveal">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">LET'S BUILD<br><span class="outline">SOMETHING BIG</span></h2>
+    <p>Ready to take your digital marketing to the next level? Reach out to us — we'd love to understand your goals and show you what's possible.</p>
+    <div class="contact-details">
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-item-label">Address</div>
+          <div class="contact-item-val">137, Hinga Galli, Bandra East<br>Mumbai – 400051, Maharashtra, India</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-item-label">Phone / WhatsApp</div>
+          <div class="contact-item-val">+91 98XXXXXXXX</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="contact-item-label">Email</div>
+          <div class="contact-item-val">hello@masterofbusinessads.com</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-form reveal">
+    <div class="section-label">Send Us a Message</div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" placeholder="Rahul Sharma">
+      </div>
+      <div class="form-group">
+        <label>Phone / WhatsApp</label>
+        <input type="tel" placeholder="+91 98000 00000">
+      </div>
+    </div>
+    <div class="form-group form-full">
+      <label>Email Address</label>
+      <input type="email" placeholder="your@email.com">
+    </div>
+    <div class="form-group form-full">
+      <label>Service Interested In</label>
+      <select>
+        <option value="">Select a service...</option>
+        <option>Website Design</option>
+        <option>Google Ads Management</option>
+        <option>Facebook / Instagram Ads</option>
+        <option>WhatsApp Ads</option>
+        <option>Software Development</option>
+        <option>Full Digital Marketing Package</option>
+      </select>
+    </div>
+    <div class="form-group form-full">
+      <label>Tell Us About Your Business</label>
+      <textarea placeholder="Brief description of your business and what you're looking to achieve..."></textarea>
+    </div>
+    <button class="form-submit">Send Message <span>→</span></button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">MBA — MASTER OF BUSINESS ADS</div>
+  <div class="footer-copy">© 2025 MBA India. All rights reserved. | Mumbai, India</div>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.transform = `translate(${mx - 5}px, ${my - 5}px)`;
+  });
+  function animateRing() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.transform = `translate(${rx - 18}px, ${ry - 18}px)`;
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => { cursor.style.transform += ' scale(2)'; });
+    el.addEventListener('mouseleave', () => { });
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Nav shrink on scroll
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 60) { nav.style.padding = '0.9rem 3rem'; }
+    else { nav.style.padding = '1.6rem 3rem'; }
+  });
+</script>
+</body>
+</html>
