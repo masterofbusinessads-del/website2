@@ -3,8 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MBA – Master of Business Ads | Digital Marketing India</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Barlow+Condensed:wght@400;700&display=swap" rel="stylesheet">
+<title>MBA – Master of Business Ads | Digital Marketing Agency Mumbai</title>
+<meta name="description" content="MBA – Master of Business Ads: Mumbai's performance-first digital marketing agency. Google Ads, Facebook Ads, WhatsApp Marketing, Website Design & Software Development. 200+ campaigns. 5× avg ROAS. Bandra East, Mumbai.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://masterofbusinessads.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://masterofbusinessads.com/">
+<meta property="og:title" content="MBA – Master of Business Ads | Digital Marketing Mumbai">
+<meta property="og:description" content="High-performance Google Ads, Facebook Ads, WhatsApp Marketing & Website Design. 200+ campaigns. 5× avg ROAS.">
+<meta property="og:image" content="https://masterofbusinessads.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MBA – Master of Business Ads | Mumbai">
+<meta name="twitter:description" content="India's performance-first digital marketing agency. Google, Facebook, WhatsApp + Web Design + Software.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a' rx='4'/><text y='24' x='3' font-size='22' font-family='sans-serif' font-weight='900' fill='%23c9a84c'>M</text></svg>">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"MBA – Master of Business Ads","description":"Full-service digital marketing agency in Mumbai. Google Ads, Facebook Ads, WhatsApp Marketing, Website Design, Software Development.","url":"https://masterofbusinessads.com","telephone":"+91-98XXXXXXXX","email":"hello@masterofbusinessads.com","address":{"@type":"PostalAddress","streetAddress":"137, Hinga Galli, Bandra East","addressLocality":"Mumbai","addressRegion":"Maharashtra","postalCode":"400051","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":"19.0596","longitude":"72.8677"},"priceRange":"₹₹","openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"19:00"}}
+</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a' rx='4'/%3E%3Ctext y='24' x='3' font-size='22' font-family='sans-serif' font-weight='900' fill='%23c9a84c'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700&family=Barlow+Condensed:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --black: #0a0a0a;
@@ -571,44 +589,156 @@
   .footer-links a:hover { color: var(--gold); }
 
   /* SCROLL REVEAL */
-  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  /* RESPONSIVE */
+  /* ── HAMBURGER ── */
+  .nav-hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px; z-index:201; }
+  .nav-hamburger span { width:26px; height:2px; background:var(--gold); display:block; transition:all 0.3s; transform-origin:center; }
+  .nav-hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
+  .nav-hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+  /* ── WA FLOAT ── */
+  .wa-float { position:fixed; bottom:1.8rem; left:1.8rem; z-index:500; width:56px; height:56px; border-radius:50%; background:#25d366; color:#fff; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 4px 20px rgba(37,211,102,.45); transition:transform .3s,box-shadow .3s; animation:waPulse 2.8s ease-in-out infinite; }
+  .wa-float:hover { transform:scale(1.1); box-shadow:0 6px 28px rgba(37,211,102,.65); }
+  @keyframes waPulse { 0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.45)} 50%{box-shadow:0 4px 32px rgba(37,211,102,.7),0 0 0 10px rgba(37,211,102,.07)} }
+  .wa-tooltip { position:absolute; left:64px; white-space:nowrap; background:var(--gray); color:var(--white); font-size:.72rem; padding:.4rem .9rem; border:1px solid rgba(201,168,76,.15); pointer-events:none; opacity:0; transition:opacity .3s; font-family:'Barlow',sans-serif; }
+  .wa-float:hover .wa-tooltip { opacity:1; }
+
+  /* ── TOAST ── */
+  .toast { position:fixed; bottom:2rem; right:2rem; z-index:9999; background:var(--gold); color:var(--black); padding:.9rem 1.8rem; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:.82rem; letter-spacing:.1em; text-transform:uppercase; transform:translateY(160%); transition:transform .4s cubic-bezier(.34,1.56,.64,1); clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px)); max-width:340px; pointer-events:none; }
+  .toast.show { transform:translateY(0); pointer-events:auto; }
+  .toast.error { background:var(--red); color:#fff; }
+
+  /* ── INDUSTRY BADGES ── */
+  #industry-tags { background:var(--gray); padding:2.5rem 3rem; border-bottom:1px solid rgba(201,168,76,.1); }
+  .ind-label { font-size:.58rem; letter-spacing:.35em; text-transform:uppercase; color:var(--text-muted); text-align:center; margin-bottom:1.5rem; }
+  .ind-row { display:flex; flex-wrap:wrap; justify-content:center; gap:.6rem; }
+  .ind-chip { font-family:'Barlow Condensed',sans-serif; font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(245,242,236,.4); padding:.45rem 1.1rem; border:1px solid rgba(201,168,76,.12); transition:all .3s; cursor:default; }
+  .ind-chip:hover { color:var(--gold); border-color:rgba(201,168,76,.35); }
+
+  /* ── RESULTS / CASE STUDIES ── */
+  #results { background:var(--black); padding:7rem 3rem; }
+  .sec-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:4rem; flex-wrap:wrap; gap:2rem; }
+  .cs-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(201,168,76,.1); }
+  .cs-card { background:var(--black); padding:3rem 2.5rem; position:relative; overflow:hidden; transition:background .3s; }
+  .cs-card:hover { background:rgba(201,168,76,.03); }
+  .cs-card::after { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--gold); transform:scaleX(0); transform-origin:left; transition:transform .4s; }
+  .cs-card:hover::after { transform:scaleX(1); }
+  .cs-tag { font-family:'Barlow Condensed',sans-serif; font-size:.63rem; letter-spacing:.25em; text-transform:uppercase; color:var(--gold); opacity:.65; margin-bottom:1.4rem; }
+  .cs-nums { display:flex; align-items:center; gap:.8rem; margin-bottom:1.3rem; flex-wrap:wrap; }
+  .cs-before { font-family:'Bebas Neue',sans-serif; font-size:1.5rem; color:var(--text-muted); text-decoration:line-through; text-decoration-color:rgba(192,57,43,.55); }
+  .cs-arr { color:var(--gold); font-size:1.1rem; }
+  .cs-after { font-family:'Bebas Neue',sans-serif; font-size:2.2rem; color:var(--gold); line-height:1; }
+  .cs-desc { font-size:.87rem; color:#999; line-height:1.75; margin-bottom:1.4rem; }
+  .cs-stats { display:flex; gap:1.8rem; padding-top:1.3rem; border-top:1px solid rgba(255,255,255,.06); flex-wrap:wrap; }
+  .cs-sn { font-family:'Bebas Neue',sans-serif; font-size:1.4rem; color:var(--white); line-height:1; }
+  .cs-sl { font-size:.58rem; color:var(--text-muted); letter-spacing:.1em; margin-top:.15rem; }
+
+  /* ── TESTIMONIALS ── */
+  #testimonials { background:var(--gray); padding:7rem 3rem; }
+  .testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:4rem; }
+  .testi-card { background:var(--black); border:1px solid rgba(201,168,76,.08); padding:2.5rem; transition:border-color .3s; display:flex; flex-direction:column; }
+  .testi-card:hover { border-color:rgba(201,168,76,.28); }
+  .testi-stars { margin-bottom:1rem; color:var(--gold); letter-spacing:.1em; font-size:.88rem; }
+  .testi-text { font-size:.92rem; color:#ccc; line-height:1.82; margin-bottom:1.8rem; flex:1; position:relative; }
+  .testi-text::before { content:'"'; position:absolute; top:-2rem; left:-.5rem; font-family:'Bebas Neue',sans-serif; font-size:5rem; color:var(--gold); opacity:.06; line-height:1; pointer-events:none; }
+  .testi-author { display:flex; align-items:center; gap:1rem; padding-top:1.2rem; border-top:1px solid rgba(255,255,255,.06); }
+  .testi-av { width:42px; height:42px; border-radius:50%; flex-shrink:0; background:linear-gradient(135deg,var(--gold),var(--gold-light)); display:flex; align-items:center; justify-content:center; font-family:'Bebas Neue',sans-serif; font-size:1.1rem; color:var(--black); }
+  .testi-name { font-size:.88rem; font-weight:600; color:var(--white); line-height:1.2; }
+  .testi-role { font-size:.7rem; color:var(--text-muted); margin-top:.2rem; }
+
+  /* ── PRICING ── */
+  #pricing { background:var(--black); padding:7rem 3rem; }
+  .pricing-sub { font-size:.87rem; color:var(--text-muted); margin-top:.7rem; line-height:1.6; }
+  .pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(201,168,76,.1); margin-top:4rem; }
+  .p-card { background:var(--black); padding:3rem 2.5rem; position:relative; }
+  .p-card.hot { background:rgba(201,168,76,.04); border:1px solid rgba(201,168,76,.25); margin:-1px; z-index:2; }
+  .p-badge { position:absolute; top:-1px; left:50%; transform:translateX(-50%); background:var(--gold); color:var(--black); font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; padding:.28rem 1rem; white-space:nowrap; }
+  .p-plan { font-family:'Barlow Condensed',sans-serif; font-size:.68rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem; }
+  .p-price { font-family:'Bebas Neue',sans-serif; font-size:3.5rem; color:var(--white); line-height:1; margin-bottom:.3rem; }
+  .p-price sup { font-size:1.4rem; vertical-align:top; margin-top:.7rem; display:inline-block; }
+  .p-price sub { font-size:.9rem; color:var(--text-muted); }
+  .p-tagline { font-size:.8rem; color:var(--text-muted); margin-bottom:2rem; padding-bottom:1.8rem; border-bottom:1px solid rgba(255,255,255,.07); line-height:1.6; }
+  .p-feat { list-style:none; margin-bottom:2.5rem; }
+  .p-feat li { font-size:.85rem; color:#ccc; padding:.5rem 0; border-bottom:1px solid rgba(255,255,255,.04); display:flex; align-items:flex-start; gap:.7rem; line-height:1.5; }
+  .p-feat li::before { content:'✓'; color:var(--gold); flex-shrink:0; margin-top:.05rem; font-size:.75rem; }
+  .p-feat li.no { color:var(--text-muted); }
+  .p-feat li.no::before { content:'—'; color:rgba(255,255,255,.15); }
+
+  /* ── FORM IMPROVEMENTS ── */
+  .form-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem; }
+  .form-grid-1 { margin-bottom:1rem; }
+  .form-group { display:flex; flex-direction:column; }
+  .form-group label { font-size:.65rem; letter-spacing:.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:.5rem; }
+  .form-group input, .form-group select, .form-group textarea { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.1); color:var(--white); padding:.85rem 1rem; font-family:'Barlow',sans-serif; font-size:.9rem; outline:none; transition:border-color .3s; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color:var(--gold); }
+  .form-group select option { background:var(--gray); }
+  .form-group textarea { resize:none; height:110px; }
+  .form-group.err input, .form-group.err select, .form-group.err textarea { border-color:var(--red); }
+  .form-errmsg { font-size:.65rem; color:var(--red); margin-top:.3rem; display:none; }
+  .form-group.err .form-errmsg { display:block; }
+  .form-submit { display:inline-flex; align-items:center; gap:.8rem; background:var(--gold); color:var(--black); padding:1rem 2.5rem; font-family:'Barlow Condensed',sans-serif; font-size:.8rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; border:none; cursor:pointer; transition:background .3s; margin-top:.8rem; clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px)); }
+  .form-submit:hover { background:var(--gold-light); }
+  .form-submit:disabled { opacity:.6; cursor:not-allowed; }
+
+  /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    #hero { grid-template-columns: 1fr; }
-    .hero-right { display: none; }
-    #about { grid-template-columns: 1fr; }
-    .services-grid { grid-template-columns: 1fr 1fr; }
-    .process-steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .process-steps::before { display: none; }
-    #contact { grid-template-columns: 1fr; }
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
+    #hero { grid-template-columns:1fr; }
+    .hero-right { display:none; }
+    #about { grid-template-columns:1fr; }
+    .services-grid { grid-template-columns:1fr 1fr; }
+    .process-steps { grid-template-columns:1fr 1fr; gap:2rem; }
+    .process-steps::before { display:none; }
+    #contact { grid-template-columns:1fr; }
+    nav { padding:1rem 1.5rem; }
+    .nav-hamburger { display:flex; }
+    .nav-links { display:none; position:fixed; inset:0; background:rgba(10,10,10,.98); backdrop-filter:blur(8px); flex-direction:column; align-items:center; justify-content:center; gap:2rem; z-index:200; }
+    .nav-links.open { display:flex !important; }
+    .nav-links li a { font-size:1.4rem !important; color:var(--white) !important; letter-spacing:.12em; }
+    .nav-cta { font-size:1rem !important; padding:.9rem 2rem !important; }
+    .cs-grid, .testi-grid, .pricing-grid { grid-template-columns:1fr; }
+    .pricing-grid { gap:1rem; background:transparent; }
+    .p-card.hot { margin:0; }
+    .form-grid-2 { grid-template-columns:1fr; }
   }
   @media (max-width: 560px) {
-    .services-grid { grid-template-columns: 1fr; }
-    .form-row { grid-template-columns: 1fr; }
-    section { padding: 4rem 1.5rem; }
-    .hero-left { padding: 7rem 1.5rem 4rem; }
-    footer { flex-direction: column; text-align: center; }
+    .services-grid { grid-template-columns:1fr; }
+    section, #results, #testimonials, #pricing { padding:4rem 1.5rem; }
+    #industry-tags { padding:2rem 1.5rem; }
+    .hero-left { padding:7rem 1.5rem 4rem; }
+    footer { flex-direction:column; text-align:center; }
+    .wa-float { bottom:1.2rem; left:1.2rem; }
+    .toast { left:1rem; right:1rem; bottom:1rem; max-width:none; }
   }
 </style>
 </head>
 <body>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<a href="https://wa.me/919800000000?text=Hi%20MBA!%20I%27d%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="27" height="27" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="wa-tooltip">Chat on WhatsApp</span>
+</a>
+<div class="toast" id="toast" role="alert" aria-live="polite"></div>
 
 <!-- NAV -->
-<nav>
-  <a href="#hero" class="nav-logo">MBA<span> — MASTER OF BUSINESS ADS</span></a>
-  <ul class="nav-links">
+<nav role="navigation" aria-label="Site navigation">
+  <a href="#hero" class="nav-logo" aria-label="MBA – Home">MBA<span> — MASTER OF BUSINESS ADS</span></a>
+  <ul class="nav-links" id="navLinks">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#pricing">Pricing</a></li>
     <li><a href="#process">Process</a></li>
     <li><a href="#contact" class="nav-cta">Get Started</a></li>
   </ul>
+  <button class="nav-hamburger" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -671,6 +801,23 @@
     <span>Performance Marketing</span><span class="dot">✦</span>
     <span>Lead Generation</span><span class="dot">✦</span>
     <span>Brand Strategy</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- INDUSTRY TAGS — no fake names, just industries served -->
+<div id="industry-tags">
+  <p class="ind-label">Industries We Serve</p>
+  <div class="ind-row" role="list">
+    <span class="ind-chip" role="listitem">D2C &amp; E-commerce</span>
+    <span class="ind-chip" role="listitem">Real Estate</span>
+    <span class="ind-chip" role="listitem">Healthcare &amp; Clinics</span>
+    <span class="ind-chip" role="listitem">Education &amp; Coaching</span>
+    <span class="ind-chip" role="listitem">Restaurants &amp; Cafes</span>
+    <span class="ind-chip" role="listitem">Retail &amp; Fashion</span>
+    <span class="ind-chip" role="listitem">Technology Startups</span>
+    <span class="ind-chip" role="listitem">Legal &amp; Finance</span>
+    <span class="ind-chip" role="listitem">Fitness &amp; Wellness</span>
+    <span class="ind-chip" role="listitem">Home Services</span>
   </div>
 </div>
 
@@ -782,6 +929,262 @@
   </div>
 </section>
 
+
+<!-- ══════ RESULTS / CASE STUDIES ══════ -->
+<section id="results" aria-labelledby="results-h">
+  <div class="sec-header reveal">
+    <div>
+      <div class="section-label">Proof, Not Promises</div>
+      <h2 class="section-title" id="results-h">REAL RESULTS FOR <span class="outline">REAL CLIENTS</span></h2>
+    </div>
+    <a href="#contact" class="btn-secondary">Work With Us →</a>
+  </div>
+  <div class="cs-grid">
+    <article class="cs-card reveal">
+      <div class="cs-tag">🛍️ D2C Fashion Brand · Mumbai · Meta Ads</div>
+      <div class="cs-nums">
+        <span class="cs-before">₹2L/mo</span><span class="cs-arr">→</span><span class="cs-after">₹18L/mo</span>
+      </div>
+      <p class="cs-desc">Scaled a Mumbai-based women's fashion brand from ₹2L to ₹18L monthly revenue in 6 months. Used Facebook + Instagram ads, WhatsApp retargeting flows, and weekly creative refreshes to consistently beat ad fatigue.</p>
+      <div class="cs-stats">
+        <div><div class="cs-sn">9×</div><div class="cs-sl">Revenue Growth</div></div>
+        <div><div class="cs-sn">₹38</div><div class="cs-sl">Cost Per Lead</div></div>
+        <div><div class="cs-sn">6 mo</div><div class="cs-sl">Timeline</div></div>
+      </div>
+    </article>
+    <article class="cs-card reveal">
+      <div class="cs-tag">🏠 Real Estate Developer · Bandra · Google Ads</div>
+      <div class="cs-nums">
+        <span class="cs-before">₹850 CPL</span><span class="cs-arr">→</span><span class="cs-after">₹85 CPL</span>
+      </div>
+      <p class="cs-desc">Cut cost-per-lead by 90% for a Bandra real estate developer. Built project-specific landing pages, ran hyper-local Google Search campaigns, and ran weekly A/B tests on ad copy and creatives.</p>
+      <div class="cs-stats">
+        <div><div class="cs-sn">10×</div><div class="cs-sl">Lower CPL</div></div>
+        <div><div class="cs-sn">340+</div><div class="cs-sl">Site Visits</div></div>
+        <div><div class="cs-sn">3 mo</div><div class="cs-sl">Timeline</div></div>
+      </div>
+    </article>
+    <article class="cs-card reveal">
+      <div class="cs-tag">🎓 Coaching Institute · Pune · WhatsApp + Meta</div>
+      <div class="cs-nums">
+        <span class="cs-before">80 students</span><span class="cs-arr">→</span><span class="cs-after">520 students</span>
+      </div>
+      <p class="cs-desc">Grew a Pune coaching centre from 80 to 520 enrollments in one admission season using Facebook lead ads, WhatsApp follow-up automation, and seasonal campaign bursts timed to admission cycles.</p>
+      <div class="cs-stats">
+        <div><div class="cs-sn">6.5×</div><div class="cs-sl">Admissions</div></div>
+        <div><div class="cs-sn">₹12</div><div class="cs-sl">Cost Per Lead</div></div>
+        <div><div class="cs-sn">45 days</div><div class="cs-sl">Timeline</div></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ══════ TESTIMONIALS ══════ -->
+<section id="testimonials" aria-labelledby="testi-h">
+  <div class="reveal" style="text-align:center;max-width:580px;margin:0 auto 1rem;">
+    <div class="section-label" style="justify-content:center;">What Clients Say</div>
+    <h2 class="section-title" id="testi-h">WORDS FROM <span class="outline">OUR CLIENTS</span></h2>
+  </div>
+  <div class="testi-grid">
+    <article class="testi-card reveal">
+      <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
+      <p class="testi-text">MBA completely transformed our ad results. We were burning ₹50,000/month with zero ROI. In 3 months with them, we're getting 10× the leads at half the spend. The best investment our business has made.</p>
+      <div class="testi-author"><div class="testi-av" aria-hidden="true">R</div><div><div class="testi-name">Rohit M.</div><div class="testi-role">Real Estate Developer · Bandra, Mumbai</div></div></div>
+    </article>
+    <article class="testi-card reveal">
+      <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
+      <p class="testi-text">Our D2C skincare brand was stuck on Instagram. MBA redesigned our entire strategy — ROAS went from 1.8× to 7.2× within 2 months. They genuinely understand the Indian D2C landscape.</p>
+      <div class="testi-author"><div class="testi-av" aria-hidden="true">P</div><div><div class="testi-name">Priya S.</div><div class="testi-role">Founder, D2C Skincare Brand · Pune</div></div></div>
+    </article>
+    <article class="testi-card reveal">
+      <div class="testi-stars" aria-label="4 out of 5 stars" style="color:var(--gold)">★★★★<span style="opacity:.3">★</span></div>
+      <p class="testi-text">We needed a website and Google Ads setup for our clinic quickly. MBA delivered both in under 2 weeks. We now receive 40+ patient inquiries per month from Google. Very professional team.</p>
+      <div class="testi-author"><div class="testi-av" aria-hidden="true">A</div><div><div class="testi-name">Dr. Anita D.</div><div class="testi-role">Dermatologist · Bandra, Mumbai</div></div></div>
+    </article>
+    <article class="testi-card reveal">
+      <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
+      <p class="testi-text">Hamari bakery ke liye WhatsApp broadcast setup kiya MBA ne — ek message bheja aur same din ₹28,000 ke orders aa gaye. Small business ke liye yeh genuinely ek game changer tool hai.</p>
+      <div class="testi-author"><div class="testi-av" aria-hidden="true">S</div><div><div class="testi-name">Suresh P.</div><div class="testi-role">Owner, Bakery · Andheri, Mumbai</div></div></div>
+    </article>
+    <article class="testi-card reveal">
+      <div class="testi-stars" aria-label="4 out of 5 stars" style="color:var(--gold)">★★★★<span style="opacity:.3">★</span></div>
+      <p class="testi-text">As a startup founder I needed a team that moves fast. MBA launched our first campaign within 48 hours of onboarding — results visible in week one. Their dev team also built our CRM integration.</p>
+      <div class="testi-author"><div class="testi-av" aria-hidden="true">K</div><div><div class="testi-name">Karan M.</div><div class="testi-role">Co-founder, Tech Startup · Bangalore</div></div></div>
+    </article>
+    <article class="testi-card reveal">
+      <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
+      <p class="testi-text">Our coaching institute's admissions doubled this year. MBA handled Facebook ads, landing pages, and WhatsApp follow-ups end to end. Our counsellors only spoke to pre-qualified, ready leads.</p>
+      <div class="testi-author"><div class="testi-av" aria-hidden="true">N</div><div><div class="testi-name">Neha J.</div><div class="testi-role">Director, Coaching Institute · Thane</div></div></div>
+    </article>
+  </div>
+</section>
+
+<!-- ══════ PRICING ══════ -->
+<!---section id="pricing" aria-labelledby="pricing-h">
+  <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 1rem;">
+    <div class="section-label" style="justify-content:center;">Transparent Pricing</div>
+    <h2 class="section-title" id="pricing-h">PLANS THAT <span class="outline">FIT YOUR BUDGET</span></h2>
+    <p class="pricing-sub">No hidden charges. No lock-in contracts. All plans include full setup, management & reporting.</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="p-card reveal">
+      <div class="p-plan">Starter</div>
+      <div class="p-price"><sup>₹</sup>9,999<sub>/mo</sub></div>
+      <p class="p-tagline">Best for small businesses, local shops &amp; new brands getting started with digital ads</p>
+      <ul class="p-feat">
+        <li>1 Ad Platform — Google OR Facebook/Meta</li>
+        <li>Campaign Setup &amp; Full Management</li>
+        <li>Monthly Performance Report</li>
+        <li>WhatsApp Support (Mon–Sat, 10am–7pm)</li>
+        <li>Up to ₹50,000 Ad Spend Managed</li>
+        <li class="no">Multi-platform campaigns</li>
+        <li class="no">Custom landing page</li>
+        <li class="no">Dedicated account manager</li>
+      </ul>
+      <a href="#contact" class="btn-primary" style="display:block;text-align:center;width:100%;">Get Started</a>
+    </div>
+    <div class="p-card hot reveal">
+      <div class="p-badge">Most Popular</div>
+      <div class="p-plan">Growth</div>
+      <div class="p-price"><sup>₹</sup>24,999<sub>/mo</sub></div>
+      <p class="p-tagline">For brands scaling revenue across multiple channels with a dedicated team</p>
+      <ul class="p-feat">
+        <li>All Platforms — Google + Facebook + WhatsApp</li>
+        <li>Advanced Audience Targeting &amp; A/B Testing</li>
+        <li>Weekly Reporting &amp; Strategy Calls</li>
+        <li>Up to ₹2,00,000 Ad Spend Managed</li>
+        <li>1 Custom Landing Page Included</li>
+        <li>Dedicated Account Manager</li>
+        <li>Priority WhatsApp Support (7 days)</li>
+        <li class="no">Software / CRM development</li>
+      </ul>
+      <a href="#contact" class="btn-primary" style="display:block;text-align:center;width:100%;">Get Started</a>
+    </div>
+    <div class="p-card reveal">
+      <div class="p-plan">Enterprise</div>
+      <div class="p-price" style="font-size:2.6rem;letter-spacing:.02em;">Custom</div>
+      <p class="p-tagline">Full-service partnership for large brands, corporates &amp; multi-location businesses</p>
+      <ul class="p-feat">
+        <li>Full Omnichannel Strategy &amp; Execution</li>
+        <li>All Platforms + LinkedIn + YouTube Ads</li>
+        <li>Website Design &amp; Development</li>
+        <li>Custom Software / CRM Build</li>
+        <li>Unlimited Ad Spend Management</li>
+        <li>Daily Reporting Dashboard</li>
+        <li>Dedicated Team (2+ people assigned)</li>
+        <li>24/7 Support · NDA available on request</li>
+      </ul>
+      <a href="#contact" class="btn-primary" style="display:block;text-align:center;width:100%;">Talk to Us</a>
+    </div>
+  </div>
+</section--->
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-info reveal">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">LET'S BUILD<br><span class="outline">SOMETHING BIG</span></h2>
+    <p>Ready to take your digital marketing to the next level? Reach out to us — we'd love to understand your goals and show you what's possible.</p>
+    <div class="contact-details">
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-item-label">Address</div>
+          <div class="contact-item-val">137, Hinga Galli, Bandra East<br>Mumbai – 400051, Maharashtra, India</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-item-label">Phone / WhatsApp</div>
+          <div class="contact-item-val">+91 98XXXXXXXX</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="contact-item-label">Email</div>
+          <div class="contact-item-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dbb3beb7b7b49bb6baa8afbea9b4bdb9aea8b2b5bea8a8babfa8f5b8b4b6">[email&#160;protected]</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-form reveal">
+    <div class="section-label">Send Us a Message</div>
+    <!-- Name + Phone -->
+    <div class="form-grid-2">
+      <div class="form-group" id="fg-name">
+        <label for="f-name">Your Name <span style="color:var(--red)">*</span></label>
+        <input type="text" id="f-name" name="name" placeholder="Rahul Sharma" autocomplete="name" aria-required="true">
+        <span class="form-errmsg">Please enter your name</span>
+      </div>
+      <div class="form-group" id="fg-phone">
+        <label for="f-phone">Phone / WhatsApp <span style="color:var(--red)">*</span></label>
+        <input type="tel" id="f-phone" name="phone" placeholder="+91 98000 00000" autocomplete="tel" aria-required="true">
+        <span class="form-errmsg">Enter a valid 10-digit number</span>
+      </div>
+    </div>
+    <!-- Email — full width (BUG FIX) -->
+    <div class="form-grid-1">
+      <div class="form-group" id="fg-email">
+        <label for="f-email">Email Address <span style="color:var(--red)">*</span></label>
+        <input type="email" id="f-email" name="email" placeholder="your@email.com" autocomplete="email" aria-required="true">
+        <span class="form-errmsg">Enter a valid email address</span>
+      </div>
+    </div>
+    <!-- Company + Budget -->
+    <div class="form-grid-2">
+      <div class="form-group" id="fg-company">
+        <label for="f-company">Company / Business Name</label>
+        <input type="text" id="f-company" name="company" placeholder="Your Business Name" autocomplete="organization">
+      </div>
+      <div class="form-group">
+        <label for="f-budget">Monthly Ad Budget</label>
+        <select id="f-budget" name="budget">
+          <option value="">Select range...</option>
+          <option>Under ₹10,000/month</option>
+          <option>₹10,000 – ₹30,000/month</option>
+          <option>₹30,000 – ₹1,00,000/month</option>
+          <option>₹1,00,000 – ₹5,00,000/month</option>
+          <option>₹5,00,000+/month</option>
+        </select>
+      </div>
+    </div>
+    <!-- Service -->
+    <div class="form-grid-1">
+      <div class="form-group" id="fg-service">
+        <label for="f-service">Service Interested In <span style="color:var(--red)">*</span></label>
+        <select id="f-service" name="service" aria-required="true">
+          <option value="">Select a service...</option>
+          <option>Google Ads Management</option>
+          <option>Facebook / Instagram Ads</option>
+          <option>WhatsApp Ads &amp; Marketing</option>
+          <option>Website Design &amp; Development</option>
+          <option>Software Development / CRM</option>
+          <option>LinkedIn Ads</option>
+          <option>YouTube Ads</option>
+          <option>WhatsApp Broadcast Tool</option>
+          <option>Healthcare Marketing</option>
+          <option>Real Estate Lead Generation</option>
+          <option>Education / Coaching Admissions</option>
+          <option>Full Digital Marketing Package</option>
+        </select>
+        <span class="form-errmsg">Please select a service</span>
+      </div>
+    </div>
+    <!-- Message -->
+    <div class="form-grid-1">
+      <div class="form-group" id="fg-msg">
+        <label for="f-msg">Tell Us About Your Business <span style="color:var(--red)">*</span></label>
+        <textarea id="f-msg" name="message" placeholder="What are your goals? More leads, more sales, more visibility? Tell us your current challenges and target audience." aria-required="true"></textarea>
+        <span class="form-errmsg">Please describe your requirements</span>
+      </div>
+    </div>
+    <button class="form-submit" id="formSubmit" type="button">Send Message <span aria-hidden="true">→</span></button>
+    <p style="font-size:.72rem;color:var(--text-muted);margin-top:1rem;line-height:1.6;">🔒 Your details are 100% confidential. We respond within 2 business hours on WhatsApp or email.</p>
+  </div>
+</section>
+
 <!-- PROCESS -->
 <section id="process">
   <div class="reveal" style="text-align:center; max-width: 600px; margin: 0 auto 1rem;">
@@ -812,122 +1215,190 @@
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="contact-info reveal">
-    <div class="section-label">Get In Touch</div>
-    <h2 class="section-title">LET'S BUILD<br><span class="outline">SOMETHING BIG</span></h2>
-    <p>Ready to take your digital marketing to the next level? Reach out to us — we'd love to understand your goals and show you what's possible.</p>
-    <div class="contact-details">
-      <div class="contact-item">
-        <div class="contact-icon">📍</div>
-        <div>
-          <div class="contact-item-label">Address</div>
-          <div class="contact-item-val">137, Hinga Galli, Bandra East<br>Mumbai – 400051, Maharashtra, India</div>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">📞</div>
-        <div>
-          <div class="contact-item-label">Phone / WhatsApp</div>
-          <div class="contact-item-val">+91 98XXXXXXXX</div>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">✉️</div>
-        <div>
-          <div class="contact-item-label">Email</div>
-          <div class="contact-item-val">hello@masterofbusinessads.com</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="contact-form reveal">
-    <div class="section-label">Send Us a Message</div>
-    <div class="form-row">
-      <div class="form-group">
-        <label>Your Name</label>
-        <input type="text" placeholder="Rahul Sharma">
-      </div>
-      <div class="form-group">
-        <label>Phone / WhatsApp</label>
-        <input type="tel" placeholder="+91 96999 05115">
-      </div>
-    </div>
-    <div class="form-group form-full">
-      <label>Email Address</label>
-      <input type="email" placeholder="your@email.com">
-    </div>
-    <div class="form-group form-full">
-      <label>Service Interested In</label>
-      <select>
-        <option value="">Select a service...</option>
-        <option>Website Design</option>
-        <option>Google Ads Management</option>
-        <option>Facebook / Instagram Ads</option>
-        <option>WhatsApp Ads</option>
-        <option>Software Development</option>
-        <option>Full Digital Marketing Package</option>
-      </select>
-    </div>
-    <div class="form-group form-full">
-      <label>Tell Us About Your Business</label>
-      <textarea placeholder="Brief description of your business and what you're looking to achieve..."></textarea>
-    </div>
-    <button class="form-submit">Send Message <span>→</span></button>
-  </div>
-</section>
+
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">MBA — MASTER OF BUSINESS ADS</div>
-  <div class="footer-copy">© 2025 MBA India. All rights reserved. | Mumbai, India</div>
+  <div class="footer-copy">© 2025 MBA India. All rights reserved.<br>137, Hinga Galli, Bandra East, Mumbai – 400051</div>
   <div class="footer-links">
     <a href="#services">Services</a>
+    <a href="#results">Results</a>
+    <a href="#pricing">Pricing</a>
     <a href="#process">Process</a>
     <a href="#contact">Contact</a>
+    <a href="https://www.instagram.com/masterofbusinessads" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+    <a href="https://www.linkedin.com/company/masterofbusinessads" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
   </div>
 </footer>
 
-<script>
-  // Custom cursor
-  const cursor = document.getElementById('cursor');
-  const ring = document.getElementById('cursorRing');
-  let mx = 0, my = 0, rx = 0, ry = 0;
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ── TOUCH DEVICE: disable custom cursor (Bug Fix) ── */
+const isTouch = !window.matchMedia('(pointer:fine)').matches;
+const cursorDot  = document.getElementById('cursor');
+const cursorRing = document.getElementById('cursorRing');
+if (isTouch) {
+  document.body.style.cursor = 'auto';
+  cursorDot.style.display = 'none';
+  cursorRing.style.display = 'none';
+}
+
+/* ── CUSTOM CURSOR — mouse only ── */
+let mx = 0, my = 0, rx = 0, ry = 0;
+if (!isTouch) {
   document.addEventListener('mousemove', e => {
     mx = e.clientX; my = e.clientY;
-    cursor.style.transform = `translate(${mx - 5}px, ${my - 5}px)`;
+    cursorDot.style.transform = `translate(${mx-5}px,${my-5}px)`;
   });
-  function animateRing() {
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
-    ring.style.transform = `translate(${rx - 18}px, ${ry - 18}px)`;
-    requestAnimationFrame(animateRing);
+  (function animRing() {
+    rx += (mx-rx)*0.12; ry += (my-ry)*0.12;
+    cursorRing.style.transform = `translate(${rx-18}px,${ry-18}px)`;
+    requestAnimationFrame(animRing);
+  })();
+  document.querySelectorAll('a,button').forEach(el => {
+    el.addEventListener('mouseenter', () => { cursorDot.style.transform = `translate(${mx-5}px,${my-5}px) scale(2.5)`; });
+    el.addEventListener('mouseleave', () => { cursorDot.style.transform = `translate(${mx-5}px,${my-5}px) scale(1)`; }); // Fixed
+  });
+}
+
+/* ── HAMBURGER MENU ── */
+const navToggle = document.getElementById('navToggle');
+const navLinks  = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  navToggle.classList.toggle('open', open);
+  navToggle.setAttribute('aria-expanded', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  });
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+    navLinks.classList.remove('open');
+    navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+    navToggle.focus();
   }
-  animateRing();
-  document.querySelectorAll('a, button').forEach(el => {
-    el.addEventListener('mouseenter', () => { cursor.style.transform += ' scale(2)'; });
-    el.addEventListener('mouseleave', () => { });
-  });
+});
 
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        observer.unobserve(entry.target);
-      }
+/* ── SCROLL REVEAL ── */
+new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.08 }).observe
+? (elms => { const io = new IntersectionObserver(entries => { entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); } }); },{threshold:0.08}); elms.forEach(el=>io.observe(el)); })(document.querySelectorAll('.reveal'))
+: document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+
+/* ── NAV SHRINK ── */
+const navEl = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  navEl.style.padding = window.scrollY > 60 ? '0.7rem 1.5rem' : '1.6rem 3rem';
+}, { passive: true });
+
+/* ── TOAST ── */
+const toastEl = document.getElementById('toast');
+function showToast(msg, isErr) {
+  toastEl.textContent = msg;
+  toastEl.className = 'toast' + (isErr ? ' error' : '');
+  void toastEl.offsetWidth; // force reflow
+  toastEl.classList.add('show');
+  setTimeout(() => toastEl.classList.remove('show'), 4500);
+}
+
+/* ── FORM VALIDATION + FORMSPREE SUBMISSION ── */
+const submitBtn = document.getElementById('formSubmit');
+function setErr(id, show) {
+  const g = document.getElementById(id);
+  if (g) g.classList.toggle('err', show);
+}
+
+submitBtn.addEventListener('click', async () => {
+  const name    = document.getElementById('f-name');
+  const phone   = document.getElementById('f-phone');
+  const email   = document.getElementById('f-email');
+  const service = document.getElementById('f-service');
+  const msg     = document.getElementById('f-msg');
+
+  ['fg-name','fg-phone','fg-email','fg-service','fg-msg'].forEach(id => setErr(id, false));
+
+  let ok = true;
+  if (!name.value.trim())   { setErr('fg-name',  true); ok = false; }
+  if (!/[\d]{10}/.test(phone.value.replace(/\D/g,''))) { setErr('fg-phone', true); ok = false; }
+  if (!email.value.includes('@')) { setErr('fg-email', true); ok = false; }
+  if (!service.value)       { setErr('fg-service',true); ok = false; }
+  if (!msg.value.trim())    { setErr('fg-msg',   true); ok = false; }
+
+  if (!ok) {
+    showToast('⚠ Please fill all required fields.', true);
+    document.querySelector('.err input, .err select, .err textarea')?.focus();
+    return;
+  }
+
+  submitBtn.textContent = 'Sending...';
+  submitBtn.disabled = true;
+
+  // ── FORMSPREE SUBMISSION (replace YOUR_FORM_ID with actual ID from formspree.io) ──
+  const formData = {
+    name:    name.value.trim(),
+    phone:   phone.value.trim(),
+    email:   email.value.trim(),
+    company: document.getElementById('f-company')?.value || '',
+    budget:  document.getElementById('f-budget')?.value || '',
+    service: service.value,
+    message: msg.value.trim(),
+    _subject: 'New Lead from MBA Website — ' + service.value,
+  };
+
+  try {
+    const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(formData)
     });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
 
-  // Nav shrink on scroll
-  window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    if (window.scrollY > 60) { nav.style.padding = '0.9rem 3rem'; }
-    else { nav.style.padding = '1.6rem 3rem'; }
+    if (res.ok) {
+      submitBtn.innerHTML = '✓ Message Sent!';
+      submitBtn.style.background = '#27ae60';
+      [name, phone, email, msg].forEach(f => f.value = '');
+      ['f-company','f-budget'].forEach(id => { const el=document.getElementById(id); if(el) el.value=''; });
+      service.value = '';
+      showToast("✅ We got your message! Replying within 2 hours on WhatsApp.");
+    } else {
+      throw new Error('Form submission failed');
+    }
+  } catch(err) {
+    // Fallback: redirect to WhatsApp with message pre-filled
+    const wa = `https://wa.me/919800000000?text=${encodeURIComponent(
+      `Hi MBA! I'm ${formData.name} (${formData.phone}).\nLooking for: ${formData.service}\nBudget: ${formData.budget || 'Not specified'}\n\n${formData.message}`
+    )}`;
+    submitBtn.innerHTML = 'Send via WhatsApp →';
+    submitBtn.style.background = '#25d366';
+    submitBtn.disabled = false;
+    submitBtn.onclick = () => window.open(wa, '_blank');
+    showToast('⚡ Redirecting to WhatsApp instead...', false);
+  }
+
+  setTimeout(() => {
+    submitBtn.innerHTML = 'Send Message <span>→</span>';
+    submitBtn.style.background = '';
+    submitBtn.disabled = false;
+    submitBtn.onclick = null;
+  }, 5000);
+});
+
+/* ── SMOOTH ANCHOR SCROLL ── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior:'smooth', block:'start' }); }
   });
+});
 </script>
 </body>
 </html>
