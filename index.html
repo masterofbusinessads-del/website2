@@ -689,16 +689,18 @@
   .form-submit:disabled { opacity:.6; cursor:not-allowed; }
 
   /* ── RESPONSIVE ── */
+/* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    #hero { grid-template-columns:1fr; }
+    #hero { grid-template-columns:1fr; overflow:hidden; }
     .hero-right { display:none; }
     #about { grid-template-columns:1fr; }
     .services-grid { grid-template-columns:1fr 1fr; }
     .process-steps { grid-template-columns:1fr 1fr; gap:2rem; }
     .process-steps::before { display:none; }
     #contact { grid-template-columns:1fr; }
-    nav { padding:1rem 1.5rem; }
-    .nav-hamburger { display:flex; }
+    nav { padding:1rem 1.5rem; display:flex; align-items:center; justify-content:space-between; width:100%; box-sizing:border-box; }
+    .nav-logo { font-size:1rem; flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .nav-hamburger { display:flex; flex-shrink:0; margin-left:1rem; }
     .nav-links { display:none; position:fixed; inset:0; background:rgba(10,10,10,.98); backdrop-filter:blur(8px); flex-direction:column; align-items:center; justify-content:center; gap:2rem; z-index:200; }
     .nav-links.open { display:flex !important; }
     .nav-links li a { font-size:1.4rem !important; color:var(--white) !important; letter-spacing:.12em; }
@@ -707,15 +709,20 @@
     .pricing-grid { gap:1rem; background:transparent; }
     .p-card.hot { margin:0; }
     .form-grid-2 { grid-template-columns:1fr; }
+    .hero-left { padding:7rem 1.5rem 3rem; width:100%; max-width:100%; overflow:hidden; }
+    .hero-title { font-size:clamp(2.8rem,12vw,5rem); }
+    .hero-btns { flex-wrap:wrap; gap:0.8rem; }
+    .btn-primary, .btn-secondary { padding:0.85rem 1.6rem; font-size:0.75rem; flex:0 0 auto; width:auto; }
   }
   @media (max-width: 560px) {
     .services-grid { grid-template-columns:1fr; }
     section, #results, #testimonials, #pricing { padding:4rem 1.5rem; }
     #industry-tags { padding:2rem 1.5rem; }
-    .hero-left { padding:7rem 1.5rem 4rem; }
-    footer { flex-direction:column; text-align:center; }
+    footer { flex-direction:column; text-align:center; padding:1.5rem; }
+    .footer-links { flex-wrap:wrap; justify-content:center; gap:1rem; }
     .wa-float { bottom:1.2rem; left:1.2rem; }
     .toast { left:1rem; right:1rem; bottom:1rem; max-width:none; }
+    .nav-logo span { display:none; }
   }
 </style>
 </head>
