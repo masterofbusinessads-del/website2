@@ -118,8 +118,9 @@
   }
   .hero-left {
     display: flex; flex-direction: column; justify-content: center;
-    padding: 8rem 3rem 5rem 3rem;
+    padding: 8rem 1.5rem 5rem 1.5rem;
     position: relative; z-index: 2;
+    overflow: hidden;
   }
   .hero-eyebrow {
     font-family: 'Barlow Condensed', sans-serif;
@@ -138,7 +139,7 @@
   }
   .hero-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(4rem, 7vw, 7.5rem);
+    font-size: clamp(2.8rem, 7vw, 7.5rem);
     line-height: 0.9;
     letter-spacing: 0.03em;
     margin-bottom: 1.8rem;
@@ -238,11 +239,12 @@
     letter-spacing: 0.1em;
   }
   .hero-stats {
-    display: flex; justify-content: center; gap: 4rem;
-    padding: 2rem 3rem;
+    display: flex; justify-content: center; gap: 2rem;
+    padding: 2rem 1.5rem;
     background: var(--gray);
     border-top: 1px solid rgba(201,168,76,0.15);
     grid-column: 1 / -1;
+    flex-wrap: wrap;
   }
   .stat { text-align: center; }
   .stat-num {
