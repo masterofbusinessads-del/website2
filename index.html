@@ -1359,13 +1359,14 @@ submitBtn.addEventListener('click', async () => {
   };
 
   try {
-    const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+    const res = await fetch('https://script.google.com/macros/s/AKfycbygUK3EYcvihuAO703zutFb8RaMFSPqtDA96ki8bEyxylZJnJ3HKn-auDaw50601mbJQQ/exec', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify(formData)
     });
 
-    if (res.ok) {
+    const result = await res.json();
+    if (result.result === 'success') {
       submitBtn.innerHTML = '✓ Message Sent!';
       submitBtn.style.background = '#27ae60';
       [name, phone, email, msg].forEach(f => f.value = '');
