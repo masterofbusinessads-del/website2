@@ -238,9 +238,11 @@
     letter-spacing: 0.1em;
   }
   .hero-stats {
-    position: absolute; bottom: 3rem; left: 0; right: 0;
     display: flex; justify-content: center; gap: 4rem;
-    z-index: 2;
+    padding: 2rem 3rem;
+    background: var(--gray);
+    border-top: 1px solid rgba(201,168,76,0.15);
+    grid-column: 1 / -1;
   }
   .stat { text-align: center; }
   .stat-num {
@@ -763,21 +765,21 @@
         <div class="hero-inner-text">MBA</div>
       </div>
     </div>
-    <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-num">200+</div>
-        <div class="stat-label">Campaigns Run</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">5X</div>
-        <div class="stat-label">Avg. ROAS</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">50+</div>
-        <div class="stat-label">Happy Clients</div>
-      </div>
-    </div>
     <div class="hero-line"></div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">200+</div>
+      <div class="stat-label">Campaigns Run</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">5X</div>
+      <div class="stat-label">Avg. ROAS</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">50+</div>
+      <div class="stat-label">Happy Clients</div>
+    </div>
   </div>
 </section>
 
