@@ -1303,6 +1303,14 @@ document.addEventListener('keydown', e => {
   }
 });
 
+// Scroll lock safety net   <-- YAHAN ADD KARO
+window.addEventListener('pageshow', () => {
+  document.body.style.overflow = '';
+});
+window.addEventListener('pagehide', () => {
+  document.body.style.overflow = '';
+});
+
 /* ── SCROLL REVEAL ── */
 new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
