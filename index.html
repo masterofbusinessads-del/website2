@@ -72,7 +72,7 @@
 
   /* NAV */
   nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
     display: flex; align-items: center; justify-content: space-between;
     padding: 1.6rem 3rem;
     background: rgba(10,10,10,0.92);
@@ -701,7 +701,7 @@
     nav { padding:1rem 1.5rem; display:flex; align-items:center; justify-content:space-between; width:100%; box-sizing:border-box; }
     .nav-logo { font-size:1rem; flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
     .nav-hamburger { display:flex; flex-shrink:0; margin-left:1rem; }
-    .nav-links { display:none; position:fixed; inset:0; background:rgba(10,10,10,.98); backdrop-filter:blur(8px); flex-direction:column; align-items:center; justify-content:center; gap:2rem; z-index:200; }
+    .nav-links { display:none; position:fixed; inset:0; background:rgba(10,10,10,.98); backdrop-filter:blur(8px); flex-direction:column; align-items:center; justify-content:center; gap:2rem; z-index:999; }
     .nav-links.open { display:flex !important; }
     .nav-links li a { font-size:1.4rem !important; color:var(--white) !important; letter-spacing:.12em; }
     .nav-cta { font-size:1rem !important; padding:.9rem 2rem !important; }
@@ -1313,7 +1313,13 @@ new IntersectionObserver(entries => {
 /* ── NAV SHRINK ── */
 const navEl = document.querySelector('nav');
 window.addEventListener('scroll', () => {
-  navEl.style.padding = window.scrollY > 60 ? '0.7rem 1.5rem' : '1.6rem 3rem';
+  if (window.scrollY > 60) {
+    navEl.style.padding = '0.7rem 1.5rem';
+    navEl.style.background = 'rgba(10,10,10,0.98)';
+  } else {
+    navEl.style.padding = '1.6rem 3rem';
+    navEl.style.background = 'rgba(10,10,10,0.92)';
+  }
 }, { passive: true });
 
 /* ── TOAST ── */
